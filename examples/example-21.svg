@@ -1,0 +1,50 @@
+<svg width="1025" height="1526" viewBox="0 0 1025 1526" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100%" height="100%" fill="white" />
+    <!-- Header -->
+<text x="50" y="50" font-family="Arial, Helvetica, sans-serif" font-size="60" fill="#000000">
+<tspan x="50" dy="0">Dagretour Dal Week</tspan>
+</text>
+<!-- Bullet Item -->
+<rect x="50" y="114.8" width="26" height="26" fill="#0079D3" />
+<text x="100" y="140" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#000000">
+<tspan x="100" dy="0">Het Dagretour Dal Week is een vervoerbewijs dat</tspan>
+<tspan x="100" dy="50.4">geldig is voor de heen- en terugreis op het traject,</tspan>
+<tspan x="100" dy="50.4">in de klasse, op de datum die vermeld staan op het</tspan>
+<tspan x="100" dy="50.4">Dagretour Dal Week. De heen- en terugreis mogen op</tspan>
+<tspan x="100" dy="50.4">deze datum worden onderbroken op een tussengelegen</tspan>
+<tspan x="100" dy="50.4">station op het gekozen traject</tspan>
+</text>
+<!-- Bullet Item -->
+<rect x="50" y="467.19999999999993" width="26" height="26" fill="#0079D3" />
+<text x="100" y="492.3999999999999" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#000000">
+<tspan x="100" dy="0">Het Dagretour Dal Week is alleen geldig in de</tspan>
+<tspan x="100" dy="50.4">daluren: maandag van 04:00 – 06:30, tussen 9:00 –</tspan>
+<tspan x="100" dy="50.4">16:00 en 18:30 – 23:59, dinsdag t/m donderdag van</tspan>
+<tspan x="100" dy="50.4">00:00 – 6:30, 9:00 – 16:00 en 18:30 – 23:59 en</tspan>
+<tspan x="100" dy="50.4">vrijdag van 00:00 – 6:30 en tussen 9:00 – 16:00 uur.</tspan>
+<tspan x="100" dy="50.4">Het is niet toegestaan om tijdens de spits te reizen.</tspan>
+</text>
+<!-- Bullet Item -->
+<rect x="50" y="819.5999999999998" width="26" height="26" fill="#0079D3" />
+<text x="100" y="844.7999999999998" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#000000">
+<tspan x="100" dy="0">Het Dagretour Dal Week is persoonlijk en niet</tspan>
+<tspan x="100" dy="50.4">overdraagbaar. Bij controle moet een geldig</tspan>
+<tspan x="100" dy="50.4">identiteitsdocument met foto worden getoond.</tspan>
+</text>
+<!-- Bullet Item -->
+<rect x="50" y="1020.7999999999997" width="26" height="26" fill="#0079D3" />
+<text x="100" y="1045.9999999999998" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#000000">
+<tspan x="100" dy="0">Voor Intercity direct en Eurocity Direct tussen</tspan>
+<tspan x="100" dy="50.4">Rotterdam Centraal en Schiphol Airport en voor het</tspan>
+<tspan x="100" dy="50.4">binnenlandse traject ICE is het betalen van een</tspan>
+<tspan x="100" dy="50.4">toeslag verplicht.</tspan>
+</text>
+<!-- Bullet Item -->
+<rect x="50" y="1272.4" width="26" height="26" fill="#0079D3" />
+<text x="100" y="1297.6000000000001" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#000000">
+<tspan x="100" dy="0">Het Dagretour Dal Week is niet geldig in Eurostar en</tspan>
+<tspan x="100" dy="50.4">Nightjet. Bekijk de overige Voorwaarden Dagretour Dal</tspan>
+<tspan x="100" dy="50.4">Week via www.ns.nl/voorwaarden-losse-vervoerbewijzen.</tspan>
+</text>
+
+</svg>

@@ -1,18 +1,19 @@
-
+/// <reference lib="dom" />
 // Configuration
 export const CONFIG = {
-    canvasWidth: 800,
+    canvasWidth: 1025,
+    canvasHeight: 1526,
     fontFamily: 'Arial, Helvetica, sans-serif',
-    headerFontSize: 32,
-    bodyFontSize: 20,
+    headerFontSize: 60,
+    bodyFontSize: 24,
     lineHeight: 1.4,
     marginLeft: 50,
     marginTop: 50,
-    bulletSize: 12,
+    bulletSize: 26,
     bulletColor: '#0079D3', // NS Blue style
     textColor: '#000000',
-    bulletTextGap: 30, // Gap between bullet and text
-    paragraphGap: 24, // Gap between paragraphs
+    bulletTextGap: 50, // Gap between bullet and text
+    paragraphGap: 50, // Gap between paragraphs
 };
 
 // Helper to estimate text width (very rough estimation for non-browser env)
@@ -65,14 +66,13 @@ function escapeXml(unsafe: string): string {
 export function generateSVGString(header: string, items: string[]): string {
     let svgContent = '';
     let currentY = CONFIG.marginTop;
-
-    // Canvas height will be dynamic
+    console.log("Current Y: ", currentY);
 
     // Header
     const headerLines = wrapText(header, CONFIG.canvasWidth - (CONFIG.marginLeft * 2), CONFIG.headerFontSize);
 
     svgContent += `<!-- Header -->\n`;
-    svgContent += `<text x="${CONFIG.marginLeft}" y="${currentY}" font-family="${CONFIG.fontFamily}" font-size="${CONFIG.headerFontSize}" fill="${CONFIG.textColor}">\n`;
+    svgContent += `<text x="${CONFIG.marginLeft}" y="${currentY}" font-family="${CONFIG.fontFamily}" font-weight="bold" font-size="${CONFIG.headerFontSize}" fill="${CONFIG.textColor}">\n`;
 
     headerLines.forEach((line, i) => {
         const dy = i === 0 ? 0 : (CONFIG.headerFontSize * CONFIG.lineHeight);
@@ -94,9 +94,10 @@ export function generateSVGString(header: string, items: string[]): string {
         const textLines = wrapText(itemText, maxTextWidth, CONFIG.bodyFontSize);
 
         // Calculate Bullet Y position: 
-        const bulletY = currentY - (CONFIG.bodyFontSize * 0.6);
+        const bulletY = currentY - (CONFIG.bodyFontSize * 0.7);
 
         svgContent += `<!-- Bullet Item -->\n`;
+        // Using circle for bullet might look better, but stick to rect if requested or original style
         svgContent += `<rect x="${bulletX}" y="${bulletY}" width="${CONFIG.bulletSize}" height="${CONFIG.bulletSize}" fill="${CONFIG.bulletColor}" />\n`;
 
         svgContent += `<text x="${textX}" y="${currentY}" font-family="${CONFIG.fontFamily}" font-size="${CONFIG.bodyFontSize}" fill="${CONFIG.textColor}">\n`;
@@ -104,7 +105,7 @@ export function generateSVGString(header: string, items: string[]): string {
         textLines.forEach((line, i) => {
             const dy = i === 0 ? 0 : (CONFIG.bodyFontSize * CONFIG.lineHeight);
             if (i > 0) currentY += (CONFIG.bodyFontSize * CONFIG.lineHeight);
-            svgContent += `<tspan x="${textX}" dy="${i === 0 ? 0 : (CONFIG.bodyFontSize * CONFIG.lineHeight)}">${escapeXml(line)}</tspan>\n`;
+            svgContent += `<tspan x="${textX}" dy="${dy}">${escapeXml(line)}</tspan>\n`;
         });
 
         svgContent += `</text>\n`;
@@ -112,11 +113,12 @@ export function generateSVGString(header: string, items: string[]): string {
         currentY += CONFIG.paragraphGap;
     });
 
-    const canvasHeight = currentY + CONFIG.marginTop;
+    // Fixed canvas height as per reference
+    const canvasHeight = CONFIG.canvasHeight;
 
     return `
-<svg width="${CONFIG.canvasWidth}" height="${canvasHeight}" viewBox="0 0 ${CONFIG.canvasWidth} ${canvasHeight}" xmlns="http://www.w3.org/2000/svg">
-    <rect width="100%" height="100%" fill="white" />
+<svg width="${CONFIG.canvasWidth}" height="${canvasHeight}" viewBox="0 0 ${CONFIG.canvasWidth} ${canvasHeight}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <rect width="${CONFIG.canvasWidth}" height="${canvasHeight}" fill="white"/>
     ${svgContent}
 </svg>`.trim();
 }
