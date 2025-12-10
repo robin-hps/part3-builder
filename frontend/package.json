@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.948.0",
     "@commercetools-frontend/ui-kit": "^20.3.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
