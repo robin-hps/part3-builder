@@ -173,7 +173,7 @@ function App() {
       )}
 
       {/* Sidebar */}
-      <aside className="w-[48rem] flex-shrink-0 flex flex-col glass-panel border-r border-white/50 z-10 glass-shadow">
+      <aside className="w-1/3 flex-shrink-0 flex flex-col glass-panel border-r border-white/50 z-10 glass-shadow relative">
         <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 leading-tight">
           Part 3 Builder
         </h1>
@@ -182,23 +182,7 @@ function App() {
         <div className="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
           {/* Content Editor */}
           <section className="flex-1 flex flex-col min-h-0">
-            <div className="flex justify-between items-center mb-3">
-              <label className="block text-sm font-medium text-slate-700">Content</label>
-              <button
-                onClick={() => document.getElementById('fileInput')?.click()}
-                className="text-xs text-indigo-600 hover:text-indigo-700 font-medium flex items-center gap-1"
-              >
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                Import SVG
-              </button>
-              <input
-                type="file"
-                id="fileInput"
-                className="hidden"
-                accept=".svg"
-                onChange={onFileSelect}
-              />
-            </div>
+            <label className="block text-sm font-medium mb-3 text-slate-700">Content</label>
             <textarea
               className="w-full h-[600px] p-3 rounded-xl border border-slate-200 bg-white/50 focus:bg-white focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all text-sm leading-relaxed resize-none custom-scrollbar font-mono"
               value={inputText}
@@ -232,9 +216,24 @@ function App() {
         </div>
 
         <div className="p-6 border-t border-white/20 bg-white/40 backdrop-blur-sm flex items-center justify-between gap-3">
+          <input
+            type="file"
+            id="fileInput"
+            className="hidden"
+            accept=".svg"
+            onChange={onFileSelect}
+          />
+          <button
+            onClick={() => document.getElementById('fileInput')?.click()}
+            className="flex-1 py-1 px-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-xl shadow-sm transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-xs flex items-center justify-center gap-2"
+          >
+            <span>Import SVG</span>
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+          </button>
+
           <button
             onClick={handleGenerate}
-            className="w-[40%] py-1 px-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl shadow-lg shadow-indigo-500/30 transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-xs flex items-center justify-center gap-2"
+            className="flex-1 py-1 px-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl shadow-lg shadow-indigo-500/30 transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-xs flex items-center justify-center gap-2"
           >
             <span>Generate Preview</span>
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -245,7 +244,7 @@ function App() {
           <button
             onClick={handleDownload}
             disabled={!svgOutput}
-            className="w-[40%] py-1 px-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-xl shadow-sm transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-xs flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="flex-1 py-1 px-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-xl shadow-sm transform hover:-translate-y-0.5 transition-all duration-200 font-medium text-xs flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             <span>Download SVG</span>
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
